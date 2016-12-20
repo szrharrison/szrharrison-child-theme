@@ -18,6 +18,8 @@ get_header(); ?>
     $args = array(
       'no_paging' => true,
       'post_type' => $post_type,
+      'orderby' => 'title',
+      'order'   => 'DESC',
       );
     $custom_loop = new WP_Query( $args );
     ?>
@@ -25,10 +27,12 @@ get_header(); ?>
       <?php
       // Start the loop.
       while ( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
-
-      <h2 class="portfolio-title"><?php the_title(); ?></h2>
-      <div class="entry-content"><?php the_content(); ?></div>
-
+      <a class="slide-wrapper" href="<?php the_permalink(); ?>" style="background: url(<?php if( has_post_thumbnail() ){ the_post_thumbnail_url(); } ?>;">
+        <div class="slide-caption">
+          <h2 class="portfolio-title"><?php the_title(); ?></h2>
+          <div class="entry-content"><?php the_content(); ?></div>
+        </div>
+      </a>
       <?php endwhile; ?>
     </div>
   </main><!-- .site-main -->
