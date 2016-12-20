@@ -10,3 +10,22 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  twenty-sixteen-child
 */
+
+.porfolio-slider {
+  width: 80%;
+  max-width: 500px;
+}
+
+.slide-wrapper {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+.slide-caption {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+}

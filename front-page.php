@@ -27,7 +27,7 @@ get_header(); ?>
       <?php
       // Start the loop.
       while ( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
-      <a class="slide-wrapper" href="<?php the_permalink(); ?>" style="background: url(<?php if( has_post_thumbnail() ){ the_post_thumbnail_url(); } ?>;">
+      <a class="slide-wrapper" href="<?php the_permalink(); ?>" style="background-image: url('<?php if( has_post_thumbnail() ){ the_post_thumbnail_url(); } ?>');">
         <div class="slide-caption">
           <h2 class="portfolio-title"><?php the_title(); ?></h2>
           <div class="entry-content"><?php the_content(); ?></div>
